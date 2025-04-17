@@ -1,25 +1,22 @@
-import { useState } from "react";
-import DemoForm from './components/demoForm/DemoForm.jsx'
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import Navbar from './components/NavComponent/Navbar.jsx'
+import Demos from "./pages/Demos.jsx";
+import Exe from './pages/Exe.jsx';
+import HomePage from './pages/HomePage.jsx'
+
 
 function App() {
 
-
- const [person, SetPerson] = useState({
-    firstname : "John",
-    lastname: 'Doe',
-    age: 32
- })
-
-
- const increment = ()=>{
-    SetPerson({...person, age: person.age +1})
- }
-
   return (
     <>
-         <p>Age de {person.firstname + ' ' + person.lastname} : {person.age} ans </p>
-         <button onClick={increment}> + </button> 
-         <DemoForm></DemoForm>
+      <Router>
+         <Navbar/>
+         <Routes>
+            <Route path='/' element={<HomePage/>}/>
+            <Route path='/demos' element={<Demos/>}/>
+            <Route path='/exe' element={<Exe/>}/>
+         </Routes>
+      </Router>
     </>
   )
 }
