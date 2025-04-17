@@ -1,4 +1,5 @@
 import { useState } from "react";
+import DemoForm from './components/demoForm/DemoForm.jsx'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
     <>
          <p>Age de {person.firstname + ' ' + person.lastname} : {person.age} ans </p>
          <button onClick={increment}> + </button> 
+         <DemoForm></DemoForm>
     </>
   )
 }
