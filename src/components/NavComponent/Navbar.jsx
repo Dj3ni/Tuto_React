@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 
-function Navbar(params) {
+function Navbar() {
     const list = [
         {
             title: "Home",
@@ -26,7 +26,7 @@ function Navbar(params) {
 
     return(
         <>
-            <nav>
+            <nav >
                 <ul>
                     {listItems}
                 </ul>
